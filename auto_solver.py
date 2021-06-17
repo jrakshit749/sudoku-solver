@@ -1,14 +1,15 @@
-import pyautogui as pg
+import pyautogui as pg #For automation
 import numpy as np
 import time
 
 grid = []
+#The while loop is to accept inputs from the user Row by Row and store is aas an Integer as well as a String in 2 different lists
 while True:
     row = list(input('Row: '))
     ints = []
     for n in row:
         ints.append(int(n))
-    grid.append(ints)
+    grid.append(ints)     #Integer List
 
     if(len(grid))==9:
         break
@@ -23,17 +24,18 @@ def Print(matrix):
         final.append(matrix[i])
     for lists in final:
         for num in lists:
-            str_fin.append(str(num))
+            str_fin.append(str(num)) #String List
 
     counter =[]
+#The automation part where we tell the program what to do with the grid of sudoku
     for num in str_fin:
-        pg.press(num)
-        pg.hotkey('right')
+        pg.press(num) #Enters a possible number
+        pg.hotkey('right') #moves to the next right space
         counter.append(num)
         if len(counter)%9 == 0:
-            pg.hotkey('down')
+            pg.hotkey('down') #moves to the next bottom space
             for i in range(9):
-                pg.hotkey('left')
+                pg.hotkey('left') #moves to the previous left space
 
 
 #take input as column, row and a number to check if the number is possible in that specified space
@@ -53,8 +55,9 @@ def possible(y, x, n):
                 return False
     return True
 
-# possible(4,4,5)
+# possible(4,4,5) --Just a checker for the default sudoku grid
 
+#This function actually solves the sudoku
 def solve():
     global grid
     for y in range(9):
