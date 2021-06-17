@@ -12,4 +12,12 @@ A self solving sudoku program using python
 -After all 9 rows are completed click on the browser tab where Sudoku is open and wait for a few seconds
 -The program shall fill the sudoku automatically
 
+#How to run solver.py
+-A default grid is already entered in the program
+-To directly check if the program is working run python solver.py in cmd
+-To enter a custom input, change the default grid values to new numbers and enter 0 for empty spaces in the grid
+-Run the program again
+
+##Feel free to try new things with this code and add a custom input section to accept the sudoku grid
+
 #Have a great time tweaking the code 😁
